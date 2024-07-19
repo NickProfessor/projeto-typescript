@@ -8,8 +8,8 @@ export class Negociacoes {
     this.negociacoes.push(negociacao); // menciona a lista de negociacoes da instancia, e através do método push adiciona mais uma negociacao
   }
 
-  lista(): Array<Negociacao> {
-    // método capaz de trazer a lista de negociações
+  lista(): ReadonlyArray<Negociacao> {
+    // método capaz de trazer a lista de negociações apenas para leitura, sem possibilidade de alteração
     return this.negociacoes; // retorna a lista de negociacoes
   }
 }
