@@ -1,7 +1,7 @@
 import { Negociacao } from "./negociacao.js";
 
 export class Negociacoes {
-  private negociacoes: Array<Negociacao> = []; //lista que vai armazenar as negociações
+  private negociacoes: Negociacao[] = []; //lista que vai armazenar as negociações
 
   adiciona(negociacao: Negociacao) {
     // método capaz de adicionar uma negociao a lista de negociacoes
