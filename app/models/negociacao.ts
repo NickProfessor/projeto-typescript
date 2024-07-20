@@ -1,24 +1,17 @@
 export class Negociacao {
-  private _data: Date;
-  private _quantidade: number;
-  private _valor: number;
-  constructor(data: Date, quantidade: number, valor: number) {
-    this._data = data;
-    this._quantidade = quantidade;
-    this._valor = valor;
-  }
+  constructor(
+    // nao precisamos declarar os atributos se eles estiverem sendo chamados no construtor
+    private _data: Date, // o atributo date precisa ser trabalhado de um jeito diferente...
+    public readonly quantidade: number, // agora o código está simplificado e quem é de fora da classe consegue acessar os dados apenas para leitura
+    public readonly valor: number
+  ) {}
 
   get data(): Date {
-    return this._data; //é um GETTER, no caso vai retornar a data :D
-  }
-  get quantidade(): number {
-    return this._quantidade;
-  }
-  get valor(): number {
-    return this._valor;
+    const data = new Date(this._data.getTime());
+    return data;
   }
 
   get volume(): number {
-    return this._valor * this._quantidade;
+    return this.valor * this.quantidade;
   }
 }
