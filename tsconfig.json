@@ -3,7 +3,9 @@
     "outDir": "dist/js",
     "target": "ES6",
     "noEmitOnError": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "removeComments": true,
+    "strictNullChecks": true //Diz para o compilador TSC que pare de assumir implicitamente o tipo null para todos os tipos da aplicação. Caso null faça sentido, o desenvolvedor deve deixar isso explícito em seu código.
   },
   "include": ["app/**/*"]
 }
