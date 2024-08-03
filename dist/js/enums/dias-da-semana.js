@@ -8,4 +8,3 @@ export var DiasDaSemana;
     DiasDaSemana[DiasDaSemana["SEXTA"] = 5] = "SEXTA";
     DiasDaSemana[DiasDaSemana["SABADO"] = 6] = "SABADO";
 })(DiasDaSemana || (DiasDaSemana = {}));
-//o typescript define valores para cada elemento da enum por padrão, seguindo uma sequencia, mas é melhor que nós mesmos definamos isso
