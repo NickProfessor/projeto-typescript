@@ -8,6 +8,14 @@ export class Negociacao {
         this.quantidade = quantidade;
         this.valor = valor;
     }
+    static criaDe(
+    //métodos estáticos podem ser chamados sem a necessidade de criar uma instancia da classe
+    dataString, quantidadeString, valorString) {
+        const date = new Date(dataString.replace(/-/g, ","));
+        const quantidade = parseInt(quantidadeString);
+        const valor = parseFloat(valorString);
+        return new Negociacao(date, quantidade, valor);
+    }
     get data() {
         const data = new Date(this._data.getTime());
         return data;

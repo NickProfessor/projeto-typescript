@@ -6,6 +6,17 @@ export class Negociacao {
     public readonly valor: number
   ) {}
 
+  public static criaDe(
+    //métodos estáticos podem ser chamados sem a necessidade de criar uma instancia da classe
+    dataString: string,
+    quantidadeString: string,
+    valorString: string
+  ): Negociacao {
+    const date = new Date(dataString.replace(/-/g, ","));
+    const quantidade = parseInt(quantidadeString);
+    const valor = parseFloat(valorString);
+    return new Negociacao(date, quantidade, valor);
+  }
   public get data(): Date {
     const data = new Date(this._data.getTime());
     return data;
