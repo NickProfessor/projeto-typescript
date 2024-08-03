@@ -14,9 +14,7 @@ export class NegociacaoController {
         this.negociacoesView.update(this.negociacoes);
     }
     adiciona() {
-        const negociacao = Negociacao.criaDe(
-        //chamando um método estático, não sendo necessário instanciar a classe
-        this.inputData.value, this.inputQuantidade.value, this.inputValor.value);
+        const negociacao = Negociacao.criaDe(this.inputData.value, this.inputQuantidade.value, this.inputValor.value);
         if (!this.ehDiaUtil(negociacao.data)) {
             this.mensagemView.update("Apenas serão admitidas negociações realizadas em dias úteis!");
             return;
